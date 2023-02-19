@@ -1,0 +1,18 @@
+<ion-content >
+  <ion-list >
+    <ion-list-header>
+       Requests
+     <button ion-button icon-only clear end (click)="close()" style="margin-left: 62%;margin-bottom: 7%;color: black;"><ion-icon name="close"></ion-icon></button>
+    </ion-list-header>
+    <ion-item class="request-info" *ngFor="let item of myrequests">
+      <ion-item class="request-wrap">
+        <ion-avatar item-left><img src="{{item.photoURL}}"></ion-avatar><h4>{{item.displayName}}</h4>
+        <button ion-button icon-only clear color="secondary" (click)="accept(item)" item-right><ion-icon name="checkmark"></ion-icon></button>
+        <button ion-button  icon-only clear color="danger" (click)="ignore(item)" item-right><ion-icon name="close"></ion-icon></button>
+      </ion-item>
+    </ion-item>
+    <ion-item *ngIf="!myrequests || myrequests == ''">
+      <ion-label>No Request!</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

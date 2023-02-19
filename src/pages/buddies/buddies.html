@@ -1,0 +1,21 @@
+
+<ion-header>
+
+  <ion-navbar color="darkblue">
+    <ion-title>Find Friends</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)" placeholder="Search"></ion-searchbar>
+<ion-list>
+    <ion-item *ngFor="let key of filteredusers">
+        <ion-avatar item-start><img src="{{key.photoURL}}"></ion-avatar>
+        <h2>{{key.displayName}}</h2>
+        <button ion-button item-end outline color="primary" (click)="sendreq(key)"><ion-icon name="person-add"></ion-icon> Add Friend</button>
+    </ion-item>
+
+</ion-list>
+</ion-content>

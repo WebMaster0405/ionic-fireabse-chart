@@ -1,0 +1,8 @@
+{
+  "name": "Firebase_chat",
+  "app_id": "8039a36d",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

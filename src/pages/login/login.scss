@@ -1,0 +1,98 @@
+page-login {
+  .bg-img {
+    background-image: url(../assets/imgs/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .main-content {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    min-height: 100%;
+    .container-logo {
+      display: inline-block;
+      width: 100%;
+      margin: 20px 0;
+      img {
+        max-width: 250px;
+      }
+    }
+  }
+  .card {
+    margin: 50% 0 0;
+    width: 100%;
+    background-color: transparent;
+    @include border-radius(0);
+    .card-content {
+      padding: 0;
+    }
+  }
+  form {
+    .button-md {
+      margin: 0;
+      background-color: $black;
+      color: $white;
+      padding: 26px;
+      opacity: 1;
+      text-transform: capitalize;
+    }
+    .button-md[disabled] {
+      margin: 0;
+      background-color: $black;
+      color: $white;
+      padding: 26px;
+      opacity: .4;
+      text-transform: capitalize;
+    }
+  }
+  .button-md.eye-icon-btn{
+    background-color: transparent;
+    color: $black;
+    font-size: 20px;
+    opacity: 1;
+    @include box-shadow(none);
+  }
+  .container-bottom {
+  // @include inline-flex;
+  // @include flex-wrap(wrap);
+  // @include align-self(flex-end);
+  }
+  /*form {
+    .button-md,
+    .button-ios {
+      margin: 0px !important;
+      background-color: #fff;
+      padding: 26px !important;
+    }
+  }*/
+  .errormsg p {
+    background-color: rgba(255,0,0,.3);
+    color: $white;
+    border: 1px solid #FF0000;
+    padding: 5px;
+  }
+  .form-bottom-text {
+    display: inline-block;
+    width: 100%;
+  }
+  .form-bottom-text label,
+  a {
+    color: $black;
+  }
+  .button-container button {
+    border-radius: 1;
+  }
+  .form-bottom-text {
+    display: inline-block;
+    width: 100%;
+    margin-top: 30px;
+    color: $white;
+    font-size: 16px;
+    label {
+      color: $white;
+    }
+    a {
+      color: $white;
+    }
+  }
+}

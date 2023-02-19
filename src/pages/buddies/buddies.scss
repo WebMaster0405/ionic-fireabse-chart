@@ -1,0 +1,11 @@
+page-buddies {
+  .list-md[no-lines] {
+    .item {
+    .item-inner {
+        margin-right: 15px;
+        border-width: 1px;
+        border-bottom: 1px solid $grey-dc;
+      }
+    }
+  }
+}

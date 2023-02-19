@@ -1,0 +1,41 @@
+  <ion-content class="bg-img">
+    <div padding class="container-bottom">
+
+        <div class="main-content">
+          <div class="container-logo" padding="" text-center="">
+            <img src="assets/imgs/logo.png">
+          </div>
+        </div>
+        <form [formGroup]="authForm">
+        <ion-card>
+          <ion-card-content>
+              <div class="errormsg">
+                <div *ngIf="email.errors && email.touched">
+                  <p>Email is required.</p>
+                </div>
+                <div *ngIf="password.errors && password.touched">
+                  <p>Password is required.</p>
+                </div>
+              </div>
+              <ion-list>
+                  <ion-item>
+                      <ion-label><ion-icon ios="ios-mail" md="md-mail"></ion-icon></ion-label>
+                      <ion-input type="email" [formControl]="email" id="email" placeholder="Email" name="email" [(ngModel)]="credentials.email"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label><ion-icon ios="ios-unlock" md="md-unlock"></ion-icon></ion-label>
+                      <ion-input type="{{passwordtype}}" [formControl]="password" id="password"  placeholder="Password" name="password" [(ngModel)]="credentials.password"></ion-input>
+                      <button ion-button class="eye-icon-btn" type="button" item-right (click)="managePassword()"><ion-icon name="{{passeye}}"></ion-icon></button>
+                  </ion-item>
+                  <div class="button-container">
+                    <button ion-button full round outline color="dark" [disabled]="!authForm.valid" (click)="doLogin()">Sign in</button>
+                  </div>
+              </ion-list>
+          </ion-card-content>
+      </ion-card>
+      <div text-center class="form-bottom-text">
+        <label>Don't have an Account? <a href="javascript:void(0);" (click)="doSignup()">Sign up</a></label>
+      </div>
+    </form>
+  </div>
+</ion-content>

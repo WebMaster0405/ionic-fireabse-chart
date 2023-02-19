@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <div class="profile-image-wrap">
+      <div class="profile-image"  (click)="editimage()">
+          <img src="{{avatar}}">
+      </div>
+      <button ion-button round outline color="danger"  (click)="logout()">Logout</button>
+    </div>
+    <div class="profile-info">
+      <div class="title">
+        <h2 (click)="editname()">{{username}}</h2>
+      </div>
+      <div class="subtitle">
+        Tap on your pic or username to change it.
+      </div>
+    </div>
+    <div class="spacer" style="height: 10px;"></div>
+    <div>
+      <!-- <button ion-button round outline color="danger" (click)="logout()">Logout</button> -->
+    </div>
+     <ion-buttons end>
+
+       <button ion-button icon-only (click)="presentPopover($event)">
+         <ion-icon name="notifications"></ion-icon><div class="notification" *ngIf="requestcounter != null">{{requestcounter}}</div>
+       </button>
+     </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="myfriends == '' " class="backdropdiv">
+    <div class="focus-on">
+      <ion-fab bottom right>
+        <button ion-fab color="darkblue" (click)="addbuddy()"><ion-icon name="person-add"></ion-icon></button>
+      </ion-fab>
+    </div>
+    <div class="instrucation">
+      <p style="color:#fff;">Click, on button to Add Friends</p>
+    <img src="assets/imgs/introarrrow.png">
+    </div>
+  </div>
+
+<div padding *ngIf="myfriends != '' ">
+  <ion-list no-lines >
+    <!-- <ion-list-header>Friends</ion-list-header> -->
+    <ion-item *ngFor="let item of myfriends" (click)="buddychat(item)">
+      <ion-avatar item-left>
+        <img src={{item.photoURL}}>
+      </ion-avatar>
+      <h3>{{item.displayName}}</h3>
+      <!-- <button ion-button round color="danger" item-right right *ngIf="messagecounter != 0">{{messagecounter}}</button> -->
+    </ion-item>
+  </ion-list>
+  <ion-fab bottom right>
+    <button ion-fab color="darkblue" (click)="addbuddy()"><ion-icon name="person-add"></ion-icon></button>
+  </ion-fab>
+</div>
+</ion-content>
